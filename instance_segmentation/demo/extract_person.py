@@ -9,14 +9,14 @@ import numpy as np
 
 from mmdet.apis import inference_detector, init_detector
 
-variants = {'DetectoRS' : {'config' : 'configs/detectors/detectors_htc_r101_20e_coco.py',
-                          'ckpt' : 'checkpoints/detectors_htc_r101_20e_coco_20210419_203638-348d533b.pth'},
-            'HTC' : {'config' : 'configs/htc/htc_x101_64x4d_fpn_dconv_c3-c5_mstrain_400_1400_16x1_20e_coco.py',
-                     'ckpt' : 'checkpoints/htc_x101_64x4d_fpn_dconv_c3-c5_mstrain_400_1400_16x1_20e_coco_20200312-946fd751.pth'},
-            'PointRend' : {'config' : 'configs/point_rend/point_rend_r50_caffe_fpn_mstrain_3x_coco.py',
-                           'ckpt' : 'checkpoints/point_rend_r50_caffe_fpn_mstrain_3x_coco-e0ebb6b7.pth'},
-            'YOLACT' : {'config' : 'configs/yolact/yolact_r101_1x8_coco.py',
-                        'ckpt' : 'checkpoints/yolact_r101_1x8_coco_20200908-4cbe9101.pth'}
+variants = {'DetectoRS' : {'config' : '/content/PersonGONE/instance_segmentation/configs/detectors/detectors_htc_r101_20e_coco.py',
+                          'ckpt' : '/content/drive/MyDrive/aic23/downloads/instance_segmentation/checkpoints/detectors_htc_r101_20e_coco_20210419_203638-348d533b.pth'},
+            'HTC' : {'config' : '/content/PersonGONE/instance_segmentation/configs/htc/htc_x101_64x4d_fpn_dconv_c3-c5_mstrain_400_1400_16x1_20e_coco.py',
+                     'ckpt' : '/content/drive/MyDrive/aic23/downloads/instance_segmentation/checkpoints/htc_x101_64x4d_fpn_dconv_c3-c5_mstrain_400_1400_16x1_20e_coco_20200312-946fd751.pth'},
+            'PointRend' : {'config' : '/content/PersonGONE/instance_segmentation/configs/point_rend/point_rend_r50_caffe_fpn_mstrain_3x_coco.py',
+                           'ckpt' : '/content/drive/MyDrive/aic23/downloads/instance_segmentation/checkpoints/point_rend_r50_caffe_fpn_mstrain_3x_coco-e0ebb6b7.pth'},
+            'YOLACT' : {'config' : '/content/PersonGONE/instance_segmentation/configs/yolact/yolact_r101_1x8_coco.py',
+                        'ckpt' : '/content/drive/MyDrive/aic23/downloads/instance_segmentation/checkpoints/yolact_r101_1x8_coco_20200908-4cbe9101.pth'}
             }
 
 def process_data(result, img_path, score_thr=0.3):
@@ -100,3 +100,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
