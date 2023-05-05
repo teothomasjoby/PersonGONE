@@ -12,12 +12,12 @@ args = parser.parse_args()
 
 ################################################################################
 # Ensure correct paths
-call(['python', 'info.py'])
+call(['python', '/content/PersonGONE/info.py'])
 ################################################################################
 
 ################################################################################
 print('Downloading LaMa (inpainting model) weights!')
-lama_path = os.path.join('image_inpainting', 'big-lama')
+lama_path = os.path.join('/content/drive/MyDrive/aic23/downloads/image_inpainting', 'big-lama')
 if os.path.exists(lama_path):
     print('Already downloaded - skipping.')
 else:
@@ -31,7 +31,7 @@ else:
 
 # ################################################################################
 print('Downloading instance segmentation models weights!')
-instance_path = os.path.join('instance_segmentation', 'checkpoints')
+instance_path = os.path.join('/content/drive/MyDrive/aic23/downloads/instance_segmentation', 'checkpoints')
 os.makedirs(instance_path,exist_ok=True)
 seg_path = os.path.join(instance_path, 'detectors_htc_r101_20e_coco_20210419_203638-348d533b.pth')
 if os.path.exists(seg_path):
@@ -74,7 +74,7 @@ else:
 
 ################################################################################
 if args.detector:
-    det_path = os.path.join('detector_and_tracker', 'checkpoints', 'yolox_l')
+    det_path = os.path.join('/content/drive/MyDrive/aic23/downloads/detector_and_tracker', 'checkpoints', 'yolox_l')
     os.makedirs(det_path,exist_ok=True)
     if os.path.exists(os.path.join(det_path, 'best_ckpt.pth')):
         print('Detector already exists - skipping.')
@@ -85,3 +85,4 @@ if args.detector:
         shutil.move('best_ckpt.pth', os.path.join(det_path, 'best_ckpt.pth'))
         print('\nYOLOX-L downloaded!')
 ################################################################################
+
