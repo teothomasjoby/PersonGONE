@@ -16,11 +16,11 @@ args = parser.parse_args()
 vids = load_ids_and_paths(args.video_id)
 
 ################################################################################
-os.chdir('detector_and_tracker')
+os.chdir('/content/PersonGONE/detector_and_tracker')
 os.environ['LD_LIBRARY_PATH'] = args.cuda_path
 os.environ['PYTHONPATH'] = os.getcwd()
 for vid in vids:
-    call(['python', 'tools/detector_with_tracker.py',
+    call(['python', '/content/PersonGONE/detector_and_tracker/tools/detector_with_tracker.py',
            '-expn', args.experiment_name,
            '--path', os.path.join(inpainting_path, vid['name'], vid['name']+'.mp4'),
            '--roi_path', os.path.join(rois_path, vid['name']+'.json'),
@@ -33,9 +33,10 @@ for vid in vids:
 
 ################################################################################
 os.chdir('..')
-call(['python', 'utils/tracks_processing.py',
+call(['python', '/content/PersonGONE/utils/tracks_processing.py',
       os.path.abspath(os.path.join('detector_and_tracker', 'YOLOX_outputs', args.experiment_name)),
       args.submission_name,
       args.video_id
       ])
 ################################################################################
+
