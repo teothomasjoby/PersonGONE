@@ -8,7 +8,8 @@ variants = ['DetectoRS', 'HTC', 'PointRend', 'YOLACT']
 out_dir = 'all'
 
 scenes = os.listdir(os.path.join(sys.argv[1], variants[0]))
-
+print(sys.argv[1])
+print(out_dir)
 for scene in scenes:
     act_path = os.path.join(sys.argv[1], out_dir, scene)
     os.makedirs(act_path, exist_ok=True)
